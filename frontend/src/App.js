@@ -8,6 +8,7 @@ import {
   Routes,
 Route,
 } from "react-router-dom";
+import Signup from './screens/Signup';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home/>}/>
         <Route exact path="/login" element={<Login/>}/>
+        <Route exact path="/creatuser" element={<Signup/>}/>
       </Routes>
     </Router>
   );
