@@ -4,7 +4,8 @@ const user=require('../models/users.js');
 const {body,validationResult}=require('express-validator');
  const jwt=require("jsonwebtoken");
 const bcrypt=require("bcryptjs");
-const jwtsecret="mynameisnikhilthakurhellowhoareyou$#";
+const jwtsecret = process.env.JWT_SECRET;
+
 
 
 
