@@ -9,10 +9,12 @@ import {
 Route,
 } from "react-router-dom";
 import Signup from './screens/Signup';
+import { CartProvider } from './components/ContextReducer';
 
 
 function App() {
   return (
+    <CartProvider>
     <Router>
       <Routes>
         <Route exact path="/" element={<Home/>}/>
@@ -20,6 +22,7 @@ function App() {
         <Route exact path="/creatuser" element={<Signup/>}/>
       </Routes>
     </Router>
+    </CartProvider>
   );
 }
 

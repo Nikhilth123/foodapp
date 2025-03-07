@@ -44,10 +44,9 @@ export default function Home() {
                     .filter((item) => item.CategoryName === data.CategoryName)
                     .map((filteredItem) => (
                       <div key={filteredItem._id} className='col-md-4 col-lg-3 mb-3'>
-                        <Card foodName ={filteredItem.name}
+                        <Card foodItem={filteredItem}
                         options={filteredItem.options[0]}
-                        imgSrc={filteredItem.img}
-                        description={filteredItem.description}
+                        
                         />
                       </div>
                     ))

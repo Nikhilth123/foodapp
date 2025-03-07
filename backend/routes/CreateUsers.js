@@ -7,8 +7,8 @@ const router = express.Router();
 
 
 const jwtsecret = process.env.JWT_SECRET;
-
-router.post('/createuser',
+     
+router.post('/CreateUser',
     [body('email', 'invalid email').isEmail(),
     body('name').isLength({ min: 5 }),
     body('password', 'invalid password, length must be greater than 5').isLength({ min: 5 })],

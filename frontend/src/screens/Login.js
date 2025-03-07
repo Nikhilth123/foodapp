@@ -1,13 +1,15 @@
 import React,{useState} from 'react'
 import { Link,useNavigate} from 'react-router-dom'
 
+const BASE_URL = "http://localhost:5000"
+
 export default function Login() {
-   const [credentials,setcredentials]=React.useState({email:'',password:''});
+   const [credentials,setcredentials]=useState({email:'',password:''});
    let navigate=useNavigate();
   
       const handleSubmit=async (e)=>{
           e.preventDefault();
-          const response=await fetch("https://foodapp-wj07.onrender.com/api/LoginUser",{
+          const response=await fetch(BASE_URL+"/api/user/LoginUser",{
             method:'POST',
             headers:{
               'Content-Type':'application/json'
@@ -25,6 +27,7 @@ export default function Login() {
                  alert('Enter valid Credentials') 
           }
           if(json.success){
+            localStorage.setItem('userEmail',credentials.email);
             localStorage.setItem('authtoken',json.authToken);
             console.log(localStorage.getItem('authtoken'));
            navigate('/');

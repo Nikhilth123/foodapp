@@ -1,13 +1,13 @@
 import React,{useState} from 'react'
 import { Link } from 'react-router-dom'
 
-
+const BASE_URL = "http://localhost:5000"
 export default function Signup() {
     const [credentials,setcredentials]=React.useState({name:'',email:'',password:'',geolocation:''});
 
     const handleSubmit=async (e)=>{
         e.preventDefault();
-        const response=await fetch("https://foodapp-wj07.onrender.com/api/CreateUser",{
+        const response=await fetch(BASE_URL+"/api/user/CreateUser",{
           method:'POST',
           headers:{
             'Content-Type':'application/json'
@@ -23,6 +23,9 @@ export default function Signup() {
         console.log(json);
         if(!json.success){
                alert('Enter valid Credentials') 
+        }
+        else{
+          alert('User Created Successfully')
         }
       }
 
@@ -51,7 +54,7 @@ export default function Signup() {
   </div>
   <div className="mb-3">
     <label htmlFor="exampleInputPassword1" className="form-label">Address</label>
-    <input type="password" className="form-control" name='geolocation'onChange={onChange} value={credentials.geolocation} />
+    <input type="text " className="form-control" name='geolocation'onChange={onChange} value={credentials.geolocation} />
   </div>
  
   <button type="submit" className="btn btn-success">Submit</button>
