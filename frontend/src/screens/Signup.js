@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import { Link } from 'react-router-dom'
 
-const BASE_URL = "http://localhost:5000"
+const BASE_URL = "https://foodapp-wj07.onrender.com"
 export default function Signup() {
     const [credentials,setcredentials]=React.useState({name:'',email:'',password:'',geolocation:''});
 

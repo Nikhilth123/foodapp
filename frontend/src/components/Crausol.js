@@ -34,7 +34,7 @@ const Crausol = () => {
     };
 
     return (
-        <div style={{ width: "100%", margin: "auto", textAlign: "center" }}>
+        <div style={{ width: "100%", margin: "auto", textAlign: "center"}}>
          
             <Slider {...settings}>
                 {images.map((image) => (

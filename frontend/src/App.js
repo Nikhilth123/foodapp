@@ -3,6 +3,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './App.css';
 import Home from './screens/Home';
 import Login from './screens/Login';
+import MyOrder from './screens/MyOrder';
 import { 
   BrowserRouter as Router ,
   Routes,
@@ -20,6 +21,7 @@ function App() {
         <Route exact path="/" element={<Home/>}/>
         <Route exact path="/login" element={<Login/>}/>
         <Route exact path="/creatuser" element={<Signup/>}/>
+        <Route exact path="/myOrder" element={<MyOrder/>}/>
       </Routes>
     </Router>
     </CartProvider>
