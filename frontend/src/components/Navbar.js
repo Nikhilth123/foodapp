@@ -5,7 +5,7 @@ import Cart from "../screens/Cart";
 import Modal from "../Modal";
 import { useCart } from "./ContextReducer";
 import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css"; // Import Toastify CSS
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Navbar() {
     const [cartView, setCartView] = useState(false);
